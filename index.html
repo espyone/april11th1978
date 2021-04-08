@@ -1,0 +1,759 @@
+<html>
+<head>
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Aldrich&display=swap" rel="stylesheet">
+  <meta name="viewport" content="width=300, initial-scale=0.6, user-scalable=yes">
+
+  <style>
+  body {
+    padding-top:20px;
+    padding-bottom:106px;
+    padding-left:30px;
+    background-color:rgb(255,248,231);
+    height:320vh;
+  }
+    iframe {
+        border:none;
+    }
+.vid {
+    margin:10px;
+}
+  .drop{
+    height:80px;
+  }
+  .smooth-scroll-wrapper {
+    height:4px;
+  }
+  .title {
+    width:400px;
+    height:25px;
+    opacity:.7;
+    z-index:2;
+    font-size:21px;
+    font-family: 'Aldrich', sans-serif;
+    color:white;
+    position:absolute;
+    text-align: right;
+    margin:18px 100px;
+    text-shadow:3px 2px black;
+  }
+  .rap {
+    font-size:27px;
+    margin-top:20px;
+    opacity:.8;
+  }
+  .rock {
+    color:pink;
+    text-shadow:3px 2px black;
+    font-size:25px;
+    margin-top:23px;
+    opacity:.9;
+  }
+  .etc {
+    color:yellow;
+    text-shadow:3px 2px black;
+    font-size:29px;
+    margin-top:20px;
+    opacity:.85;
+  }
+  .marquee {
+    margin-bottom: 120px;
+    padding-right:30px;
+    padding-left:30px;
+    border-radius: 10px;
+    text-align: center;
+    color:black;
+    font-size:34px;
+    font-family:Space Grotesk;
+    text-transform: uppercase;
+    z-index:7;
+    background-color:white;
+
+  }
+  a {
+    color:white;
+    text-decoration: none;
+    text-transform: uppercase;
+    padding-left: 20px;
+    padding-right: 20px;
+    border-radius: 50px;
+    font-family:Space Grotesk;
+
+  }
+  .YTplaylistlink {
+    font-size:10px;
+    background:red;
+    top:150px;
+    right:20px;
+    position:fixed;
+    border-radius:50px 10px;
+    z-index:6;
+  }
+  .Splaylistlink {
+    background-color:rgb(30,215,96);
+    top:205px;
+    font-size:8px;
+    right:20px;
+    position:fixed;
+    z-index:6;
+
+    border-radius: 50px 10px;
+    font-family:Space Grotesk;
+  }
+
+  </style>
+</head>
+<body>
+  <div class="YTplaylistlink"><p><a href="https://www.youtube.com/playlist?list=PLjNg6WYdKvX3XjJ_PRD6K0lyN6jNjbHFG" target="_blank">Youtube version</a></p></div>
+<div class="Splaylistlink"><p><a href="https://open.spotify.com/playlist/4OKqqqx5FqQACPJW5esVE2?si=zbc1AC_aTjW905AQEnVqNg" target="_blank">Spotify version</a></p></div>
+<div class="marquee"><p>APRIL11TH1978.COM</p></div>
+<div class="vid" id="AkeemThomas">
+  <div class="title rap">Akeem Thomas - Keemy Casanova</div>
+<iframe src="https://drive.google.com/file/d/1qvdr7FYskrxoVKOXJsMzPpBIbSDNWYAy/preview" width="560" height="315" allowfullscreen></iframe>
+</div>
+<div class="vid" id="SerialKillers">
+  <div class="title rap">Xzibit, B-Real, Demrick [Serial Killers] - Loaded</div>
+<iframe src="https://drive.google.com/file/d/1CxkAuryKtOjyCusr73RmYT8E35HHur1w/preview" width="560" height="315" allowfullscreen></iframe>
+</div>
+<div class="vid" id="Myd">
+  <div class="title rap">Tobe Nwigwe, Big K.R.I.T - Bozos</div>
+<iframe src="https://drive.google.com/file/d/1M7H6JU1Yr-viSELVjyF92kKznMlz8CK7/preview" width="560" height="315" allowfullscreen></iframe>
+</div>
+
+<script>
+    var vh = 1200 / document.documentElement.clientHeight;
+    var count = -1;
+    var check = 100;
+    
+    function getScroll(){
+        if (window.pageYOffset != undefined) {
+            return [pageXOffset, pageYOffset];
+        } else {
+            var sx, sy, d = document,
+                r = d.documentElement,
+                b = d.body;
+            sx = r.scrollLeft || b.scrollLeft || 0;
+            sy = r.scrollTop || b.scrollTop || 0;
+            return [sx, sy];
+        }
+    }
+
+    function scrollAppear(){
+      if(getScroll()[1] * vh > check && count < 0){
+        let vh = 50 / document.documentElement.clientHeight;
+        var title1 = document.createElement("div");
+        title1.className = "title etc";
+        title1.innerHTML = 'Myd, Mac Demarco - Moving Men'
+        var div1 = document.createElement("div");
+        div1.className = "vid";
+        div1.innerHTML = '<iframe src="https://drive.google.com/file/d/1xZnQLEXRgy6h8YCBr5wIoxYcl-EAfepH/preview" width="560" height="315" allowfullscreen></iframe>';
+        var title2 = document.createElement("div");
+        title2.className = "title rock";
+        title2.innerHTML = 'Monolord - The Last Leaf'
+        var div2 = document.createElement("div");
+        div2.className = "vid";
+        div2.innerHTML = '<iframe src="https://drive.google.com/file/d/1pJLuEOaKuXdvavgsz_Op59WbxuERFGXj/preview" width="560" height="315" allowfullscreen></iframe>'
+        var title3 = document.createElement("div");
+        title3.className = "title rap";
+        title3.innerHTML = 'Zack Fox - The Bean Kicked In'
+        var div3 = document.createElement("div");
+        div3.className = "vid";
+        div3.innerHTML = '<iframe src="https://drive.google.com/file/d/14XcrjzyIpIw6wTNTdRu0tsw2tge9NF-c/preview" width="560" height="315" allowfullscreen></iframe>';
+          document.body.appendChild(title1);
+          document.body.appendChild(div1);
+          document.body.appendChild(title2);
+          document.body.appendChild(div2);
+          document.body.appendChild(title3);
+          document.body.appendChild(div3);
+          check = check + 100;
+          count++;
+      }
+      else if(getScroll()[1] * vh > check && count < 1){
+        let vh = 50 / document.documentElement.clientHeight;
+        var title1 = document.createElement("div");
+        title1.className = "title rock";
+        title1.innerHTML = 'Deftones - Ohms'
+        var div1 = document.createElement("div");
+        div1.className = "vid";
+        div1.innerHTML = '<iframe src="https://drive.google.com/file/d/1E2ls6nCzJJmWX3sOK_dOvSPak5pz_i1E/preview" width="560" height="315" allowfullscreen></iframe>';
+        var title2 = document.createElement("div");
+        title2.className = "title rap";
+        title2.innerHTML = 'Earthgang - Top Down'
+        var div2 = document.createElement("div");
+        div2.className = "vid";
+        div2.innerHTML = '<iframe src="https://drive.google.com/file/d/16d4_lPs7GGYk_lnk2sUNb0s8QIL-0Aie/preview" width="560" height="315" allowfullscreen></iframe>'
+        var title3 = document.createElement("div");
+        title3.className = "title rock";
+        title3.innerHTML = 'Psychedelic Porn Crumpets - Tally-Ho'
+        var div3 = document.createElement("div");
+        div3.className = "vid";
+        div3.innerHTML = '<iframe src="https://drive.google.com/file/d/1c97diJ6xj1kNJi3dXeCZDaN3aAw_dJn2/preview" width="560" height="315" allowfullscreen></iframe>';
+          document.body.appendChild(title1);
+          document.body.appendChild(div1);
+          document.body.appendChild(title2);
+          document.body.appendChild(div2);
+          document.body.appendChild(title3);
+          document.body.appendChild(div3);
+          check = check + 100;
+          count++;
+      }
+      else if(getScroll()[1] * vh > check && count < 2){
+        let vh = 50 / document.documentElement.clientHeight;
+        var title1 = document.createElement("div");
+        title1.className = "title rap";
+        title1.innerHTML = 'AG Club - Memphis'
+        var div1 = document.createElement("div");
+        div1.className = "vid";
+        div1.innerHTML = '<iframe src="https://drive.google.com/file/d/12S4tZiHNdlq5mO-qxNiJoDStvv_ZSa3p/preview" width="560" height="315" allowfullscreen></iframe>';
+        var title2 = document.createElement("div");
+        title2.className = "title rock";
+        title2.innerHTML = 'Gojira - Another World'
+        var div2 = document.createElement("div");
+        div2.className = "vid";
+        div2.innerHTML = '<iframe src="https://drive.google.com/file/d/1gbGUL3gfqXwWEGdWMyTHcJkbcdw1eyQb/preview" width="560" height="315" allowfullscreen></iframe>'
+        var title3 = document.createElement("div");
+        title3.className = "title rap";
+        title3.innerHTML = 'Maxo Kream - Drizzy Draco'
+        var div3 = document.createElement("div");
+        div3.className = "vid";
+        div3.innerHTML = '<iframe src="https://drive.google.com/file/d/1-5QoShsLWRpvu8HcF89SS3dDtOm8obP7/preview" width="560" height="315" allowfullscreen></iframe>';
+          document.body.appendChild(title1);
+          document.body.appendChild(div1);
+          document.body.appendChild(title2);
+          document.body.appendChild(div2);
+          document.body.appendChild(title3);
+          document.body.appendChild(div3);
+          check = check + 100;
+          count++;
+      }
+      else if(getScroll()[1] * vh > check && count < 3){
+        let vh = 50 / document.documentElement.clientHeight;
+        var title1 = document.createElement("div");
+        title1.className = "title etc";
+        title1.innerHTML = 'Suicideyear - Flood'
+        var div1 = document.createElement("div");
+        div1.className = "vid";
+        div1.innerHTML = '<iframe src="https://drive.google.com/file/d/1LJ-cMpCctbUQipN_xvwzDs4dJGBwYVVi/preview" width="560" height="315" allowfullscreen></iframe>';
+        var title2 = document.createElement("div");
+        title2.className = "title rap";
+        title2.innerHTML = 'Ski Mask The Slump God - Burn The Hoods'
+        var div2 = document.createElement("div");
+        div2.className = "vid";
+        div2.innerHTML = '<iframe src="https://drive.google.com/file/d/1Z7xrxeMXXMkjvyPdzWT4cybwQmU1gdwk/preview" width="560" height="315" allowfullscreen></iframe>'
+        var title3 = document.createElement("div");
+        title3.className = "title rock";
+        title3.innerHTML = 'Tallah - No One Should Read This'
+        var div3 = document.createElement("div");
+        div3.className = "vid";
+        div3.innerHTML = '<iframe src="https://drive.google.com/file/d/1tWNtL7EJonxOwyeg6CS_FJFqg2q78TPj/preview" width="560" height="315" allowfullscreen></iframe>';
+          document.body.appendChild(title1);
+          document.body.appendChild(div1);
+          document.body.appendChild(title2);
+          document.body.appendChild(div2);
+          document.body.appendChild(title3);
+          document.body.appendChild(div3);
+          check = check + 100;
+          count++;
+      }
+      else if(getScroll()[1] * vh > check && count < 4){
+        let vh = 50 / document.documentElement.clientHeight;
+        var title1 = document.createElement("div");
+        title1.className = "title etc";
+        title1.innerHTML = 'Igorrr - Very Noise'
+        var div1 = document.createElement("div");
+        div1.className = "vid";
+        div1.innerHTML = '<iframe src="https://drive.google.com/file/d/1EDkTDUwOaYfudpf6Ya9WitjEppwftTxb/preview" width="560" height="315" allowfullscreen></iframe>';
+        var title2 = document.createElement("div");
+        title2.className = "title rap";
+        title2.innerHTML = 'Action Bronson - Golden Eye'
+        var div2 = document.createElement("div");
+        div2.className = "vid";
+        div2.innerHTML = '<iframe src="https://drive.google.com/file/d/106VBo-BvAqqOyGqmDqS35_nYoYPFBBg8/preview" width="560" height="315" allowfullscreen></iframe>'
+        var title3 = document.createElement("div");
+        title3.className = "title etc";
+        title3.innerHTML = 'Yves Tumor - Gospel For A New Century'
+        var div3 = document.createElement("div");
+        div3.className = "vid";
+        div3.innerHTML = '<iframe src="https://drive.google.com/file/d/1rqu9gU0HolU7bbBifh97PJPExZWnFXeR/preview" width="560" height="315" allowfullscreen></iframe>';
+          document.body.appendChild(title1);
+          document.body.appendChild(div1);
+          document.body.appendChild(title2);
+          document.body.appendChild(div2);
+          document.body.appendChild(title3);
+          document.body.appendChild(div3);
+          check = check + 100;
+          count++;
+      }
+      else if(getScroll()[1] * vh > check && count < 5){
+        let vh = 50 / document.documentElement.clientHeigh;
+        var title1 = document.createElement("div");
+        title1.className = "title rap";
+        title1.innerHTML = 'Mr. Muthafuckin&#39 eXquire - Pink Champange'
+        var div1 = document.createElement("div");
+        div1.className = "vid";
+        div1.innerHTML = '<iframe src="https://drive.google.com/file/d/1uoUJR1Kso6cTUmcpusZtnV97YkaGkihf/preview" width="560" height="315" allowfullscreen></iframe>';
+        var title2 = document.createElement("div");
+        title2.className = "title etc";
+        title2.innerHTML = 'Too Free - No Fun'
+        var div2 = document.createElement("div");
+        div2.className = "vid";
+        div2.innerHTML = '<iframe src="https://drive.google.com/file/d/1Sq2R8J4MYcCUlDf9zROWGQRqri2Ofje_/preview" width="560" height="315" allowfullscreen></iframe>'
+        var title3 = document.createElement("div");
+        title3.className = "title rap";
+        title3.innerHTML = 'JID - 151 Rum'
+        var div3 = document.createElement("div");
+        div3.className = "vid";
+        div3.innerHTML = '<iframe src="https://drive.google.com/file/d/1fcZdud_584SOayzqkXOE5aNeCWx_y-ZP/preview" width="560" height="315" allowfullscreen></iframe>';
+          document.body.appendChild(title1);
+          document.body.appendChild(div1);
+          document.body.appendChild(title2);
+          document.body.appendChild(div2);
+          document.body.appendChild(title3);
+          document.body.appendChild(div3);
+          check = check + 100;
+          count++;
+      }
+      else if(getScroll()[1] * vh > check && count < 6){
+        let vh = 50 / document.documentElement.clientHeigh;
+        var title1 = document.createElement("div");
+        title1.className = "title rock";
+        title1.innerHTML = 'Holy Fawn - Blood Pact'
+        var div1 = document.createElement("div");
+        div1.className = "vid";
+        div1.innerHTML = '<iframe src="https://drive.google.com/file/d/1aWd_bdAad6Wx6LlDfL9GOsPanyZuowOd/preview" width="560" height="315" allowfullscreen></iframe>';
+       var title4 = document.createElement("div");
+        title4.className = "title rap";
+        title4.innerHTML = 'Kenny Mason - Angelic Hoodrat'
+        var div4 = document.createElement("div");
+        div4.className = "vid";
+        div4.innerHTML = '<iframe src="https://drive.google.com/file/d/1IauRFKXVFDqmukcDomQxt0vUSfAnTEND/preview" width="560" height="315" allowfullscreen></iframe>';
+        var title2 = document.createElement("div");
+        title2.className = "title etc";
+        title2.innerHTML = 'Disclosure, Amine, Slowthai - My High'
+        var div2 = document.createElement("div");
+        div2.className = "vid";
+        div2.innerHTML = '<iframe src="https://drive.google.com/file/d/14nYSiHnDOZmBtUmnOdu-l0ymo7k6mnI_/preview" width="560" height="315" allowfullscreen></iframe>'
+        var title3 = document.createElement("div");
+        title3.className = "title rap";
+        title3.innerHTML = 'AG Club - Columbia'
+        var div3 = document.createElement("div");
+        div3.className = "vid";
+        div3.innerHTML = '<iframe src="https://drive.google.com/file/d/1vsn8gkNM2NtWXkX8xh6s3YC2VOzupI8T/preview" width="560" height="315" allowfullscreen></iframe>';
+          document.body.appendChild(title1);
+          document.body.appendChild(div1);
+          document.body.appendChild(title4);
+          document.body.appendChild(div4);
+          document.body.appendChild(title2);
+          document.body.appendChild(div2);
+          document.body.appendChild(title3);
+          document.body.appendChild(div3);
+          check = check + 100;
+          count++;
+      }
+      else if(getScroll()[1] * vh > check && count < 7){
+        let vh = 50 / document.documentElement.clientHeigh;
+        var title1 = document.createElement("div");
+        title1.className = "title etc";
+        title1.innerHTML = 'Shlohmo - Looking At Plants'
+        var div1 = document.createElement("div");
+        div1.className = "vid";
+        div1.innerHTML = '<iframe src="https://drive.google.com/file/d/1hPZxNyZXrckJAL1uUx2OpouxDxVix59T/preview" width="560" height="315" allowfullscreen></iframe>';
+        var title2 = document.createElement("div");
+        title2.className = "title rap";
+        title2.innerHTML = 'Curren$y - Gold & Chrome'
+        var div2 = document.createElement("div");
+        div2.className = "vid";
+        div2.innerHTML = '<iframe src="https://drive.google.com/file/d/1Gc52robaAyGKRsBWrcT2DS15EkM83Ukk/preview" width="560" height="315" allowfullscreen></iframe>'
+        var title3 = document.createElement("div");
+        title3.className = "title etc";
+        title3.innerHTML = 'Aaron Taos - Control'
+        var div3 = document.createElement("div");
+        div3.className = "vid";
+        div3.innerHTML = '<iframe src="https://drive.google.com/file/d/1ZQa06-4qp1_Yz8XrhEPDiUNt8ifTcP5T/preview" width="560" height="315" allowfullscreen></iframe>';
+          document.body.appendChild(title1);
+          document.body.appendChild(div1);
+          document.body.appendChild(title2);
+          document.body.appendChild(div2);
+          document.body.appendChild(title3);
+          document.body.appendChild(div3);
+          check = check + 100;
+          count++;
+      }
+      else if(getScroll()[1] * vh > check && count < 8){
+        let vh = 50 / document.documentElement.clientHeigh;
+        var title1 = document.createElement("div");
+        title1.className = "title rap";
+        title1.innerHTML = 'Danny Brown, Run The Jewels - 3 Tearz'
+        var div1 = document.createElement("div");
+        div1.className = "vid";
+        div1.innerHTML = '<iframe src="https://drive.google.com/file/d/1wFJ9wJXDCYtol5zHigdsS-Qsy60Isjj-/preview" width="560" height="315" allowfullscreen></iframe>';
+        var title2 = document.createElement("div");
+        title2.className = "title rock";
+        title2.innerHTML = 'Drain - California Cursed'
+        var div2 = document.createElement("div");
+        div2.className = "vid";
+        div2.innerHTML = '<iframe src="https://drive.google.com/file/d/13jHXDCGmqrz-uxGfpU2AG0bZE_W1tqsa/preview" width="560" height="315" allowfullscreen></iframe>'
+        var title3 = document.createElement("div");
+        title3.className = "title rap";
+        title3.innerHTML = 'Curren$y - The Crow&#39s Nest'
+        var div3 = document.createElement("div");
+        div3.className = "vid";
+        div3.innerHTML = '<iframe src="https://drive.google.com/file/d/1i5HanbgDeVhy9pwug7tLs_BhhC-PdGwR/preview" width="560" height="315" allowfullscreen></iframe>';
+          document.body.appendChild(title1);
+          document.body.appendChild(div1);
+          document.body.appendChild(title2);
+          document.body.appendChild(div2);
+          document.body.appendChild(title3);
+          document.body.appendChild(div3);
+          check = check + 100;
+          count++;
+      }
+      else if(getScroll()[1] * vh > check && count < 9){
+        let vh = 50 / document.documentElement.clientHeigh;
+        var title1 = document.createElement("div");
+        title1.className = "title etc";
+        title1.innerHTML = 'KAS:ST - Hell On Earth'
+        var div1 = document.createElement("div");
+        div1.className = "vid";
+        div1.innerHTML = '<iframe src="https://drive.google.com/file/d/13F-A5ITZpFoV330dgN572ApsMIqv5slB/preview" width="560" height="315" allowfullscreen></iframe>';
+        var title2 = document.createElement("div");
+        title2.className = "title rap";
+        title2.innerHTML = '645AR - Yoga'
+        var div2 = document.createElement("div");
+        div2.className = "vid";
+        div2.innerHTML = '<iframe src="https://drive.google.com/file/d/1zIwQppUMkUdxeR80n7qtSHRs9R-WP9vB/preview" width="560" height="315" allowfullscreen></iframe>'
+        var title3 = document.createElement("div");
+        title3.className = "title rock";
+        title3.innerHTML = 'pg.lost - Suffering'
+        var div3 = document.createElement("div");
+        div3.className = "vid";
+        div3.innerHTML = '<iframe src="https://drive.google.com/file/d/1pjNJrI5a08wEOw5sC-iZBnjsYoHVQjp6/preview" width="560" height="315" allowfullscreen></iframe>';
+          document.body.appendChild(title1);
+          document.body.appendChild(div1);
+          document.body.appendChild(title2);
+          document.body.appendChild(div2);
+          document.body.appendChild(title3);
+          document.body.appendChild(div3);
+          check = check + 100;
+          count++;
+      }
+      else if(getScroll()[1] * vh > check && count < 10){
+        let vh = 50 / document.documentElement.clientHeigh;
+        var title1 = document.createElement("div");
+        title1.className = "title rap";
+        title1.innerHTML = 'Freddie Dredd - Cha Cha'
+        var div1 = document.createElement("div");
+        div1.className = "vid";
+        div1.innerHTML = '<iframe src="https://drive.google.com/file/d/11-KjUn85E1hs4QYb3OEgjGAhJLLIRmR8/preview" width="560" height="315" allowfullscreen></iframe>';
+        var title2 = document.createElement("div");
+        title2.className = "title etc";
+        title2.innerHTML = 'Thundercat - Dragonball Durag'
+        var div2 = document.createElement("div");
+        div2.className = "vid";
+        div2.innerHTML = '<iframe src="https://drive.google.com/file/d/15PUNG-iMeu0CWfK_cS5hEwiLZZEhEzQZ/preview" width="560" height="315" allowfullscreen></iframe>'
+        var title3 = document.createElement("div");
+        title3.className = "title rap";
+        title3.innerHTML = 'Slowthai, Denzel Curry - Psycho'
+        var div3 = document.createElement("div");
+        div3.className = "vid";
+        div3.innerHTML = '<iframe src="https://drive.google.com/file/d/1buvq5X3Zd2xoB2ZBp-jyllYf9rc7kPCT/preview" width="560" height="315" allowfullscreen></iframe>';
+          document.body.appendChild(title1);
+          document.body.appendChild(div1);
+          document.body.appendChild(title2);
+          document.body.appendChild(div2);
+          document.body.appendChild(title3);
+          document.body.appendChild(div3);
+          check = check + 100;
+          count++;
+      }
+      else if(getScroll()[1] * vh > check && count < 11){
+        let vh = 50 / document.documentElement.clientHeigh;
+        var title1 = document.createElement("div");
+        title1.className = "title rock";
+        title1.innerHTML = '-(16)- - Me & The Dog Die Together'
+        var div1 = document.createElement("div");
+        div1.className = "vid";
+        div1.innerHTML = '<iframe src="https://drive.google.com/file/d/1HrMhbg2iGib1q64z5wjBYFJyebRySa5O/preview" width="560" height="315" allowfullscreen></iframe>';
+        var title2 = document.createElement("div");
+        title2.className = "title rap";
+        title2.innerHTML = 'Shakewell - Late Night'
+        var div2 = document.createElement("div");
+        div2.className = "vid";
+        div2.innerHTML = '<iframe src="https://drive.google.com/file/d/1dUqYqrkPJn9tWy5z-k-IzlAS5LUEhv-u/preview" width="560" height="315" allowfullscreen></iframe>'
+        var title3 = document.createElement("div");
+        title3.className = "title rock";
+        title3.innerHTML = 'Nothing - April Ha Ha'
+        var div3 = document.createElement("div");
+        div3.className = "vid";
+        div3.innerHTML = '<iframe src="https://drive.google.com/file/d/13StjOPoVMKzJOw__BE6QS6R8PJtEsyNb/preview" width="560" height="315" allowfullscreen></iframe>';
+          document.body.appendChild(title1);
+          document.body.appendChild(div1);
+          document.body.appendChild(title2);
+          document.body.appendChild(div2);
+          document.body.appendChild(title3);
+          document.body.appendChild(div3);
+          check = check + 100;
+          count++;
+      }
+      else if(getScroll()[1] * vh > check && count < 12){
+        let vh = 50 / document.documentElement.clientHeigh;
+        var title1 = document.createElement("div");
+        title1.className = "title rap";
+        title1.innerHTML = 'OG Swaggerdick - Air!'
+        var div1 = document.createElement("div");
+        div1.className = "vid";
+        div1.innerHTML = '<iframe src="https://drive.google.com/file/d/1AjLn0rpFVdbv76km8gMnXBYmzwoYwW0S/preview" width="560" height="315" allowfullscreen></iframe>';
+        var title2 = document.createElement("div");
+        title2.className = "title rock";
+        title2.innerHTML = 'Spirit Adrift - Screaming From Beyond'
+        var div2 = document.createElement("div");
+        div2.className = "vid";
+        div2.innerHTML = '<iframe src="https://drive.google.com/file/d/1D0Y6OHzbZhr2HMikiSjHmwKgFtvwkjV7/preview" width="560" height="315" allowfullscreen></iframe>'
+        var title3 = document.createElement("div");
+        title3.className = "title rap";
+        title3.innerHTML = 'Your Old Droog - BDE'
+        var div3 = document.createElement("div");
+        div3.className = "vid";
+        div3.innerHTML = '<iframe src="https://drive.google.com/file/d/1y1GrizAUYnFy-_9nVTKg-hESiJUJI90L/preview" width="560" height="315" allowfullscreen></iframe>';
+          document.body.appendChild(title1);
+          document.body.appendChild(div1);
+          document.body.appendChild(title2);
+          document.body.appendChild(div2);
+          document.body.appendChild(title3);
+          document.body.appendChild(div3);
+          check = check + 100;
+          count++;
+      }
+      else if(getScroll()[1] * vh > check && count < 13){
+        let vh = 50 / document.documentElement.clientHeigh;
+        var title1 = document.createElement("div");
+        title1.className = "title rock";
+        title1.innerHTML = 'Viagra Boys - Ain&#39t Nice'
+        var div1 = document.createElement("div");
+        div1.className = "vid";
+        div1.innerHTML = '<iframe src="https://drive.google.com/file/d/10TrJ6mDDicVctROTXcGX6EQjXwaHDG0N/preview" width="560" height="315" allowfullscreen></iframe>';
+        var title2 = document.createElement("div");
+        title2.className = "title rap";
+        title2.innerHTML = 'Guapdad4000, Denzel Curry - Lil Scammer That Could'
+        var div2 = document.createElement("div");
+        div2.className = "vid";
+        div2.innerHTML = '<iframe src="https://drive.google.com/file/d/1YBz8G8-E2RTjtKQ1CgByiw8KRG4toRY1/preview" width="560" height="315" allowfullscreen></iframe>'
+        var title3 = document.createElement("div");
+        title3.className = "title etc";
+        title3.innerHTML = 'Flying Lotus, Denzel Curry - Black Balloons Reprise'
+        var div3 = document.createElement("div");
+        div3.className = "vid";
+        div3.innerHTML = '<iframe src="https://drive.google.com/file/d/1Fk8s9OUVPyBEbhkwT5SDsVpePPLrobW5/preview" width="560" height="315" allowfullscreen></iframe>';
+          document.body.appendChild(title1);
+          document.body.appendChild(div1);
+          document.body.appendChild(title2);
+          document.body.appendChild(div2);
+          document.body.appendChild(title3);
+          document.body.appendChild(div3);
+          check = check + 100;
+          count++;
+      }
+      else if(getScroll()[1] * vh > check && count < 14){
+        let vh = 50 / document.documentElement.clientHeigh;
+        var title1 = document.createElement("div");
+        title1.className = "title rap";
+        title1.innerHTML = 'CupcaKKe - Grilling Niggas / Lawd Jesus'
+        var div1 = document.createElement("div");
+        div1.className = "vid";
+        div1.innerHTML = '<iframe src="https://drive.google.com/file/d/1GoxbxR1pIPr1D8uVFLrByzCgVdqdy5fB/preview" width="560" height="315" allowfullscreen></iframe>';
+        var title2 = document.createElement("div");
+        title2.className = "title rock";
+        title2.innerHTML =  'The Chats - The Clap'
+        var div2 = document.createElement("div");
+        div2.className = "vid";
+        div2.innerHTML = '<iframe src="https://drive.google.com/file/d/16c1e-m9i-S3Lfkpgzguqza-Nhvfmmh_Q/preview" width="560" height="315" allowfullscreen></iframe>'
+        var title3 = document.createElement("div");
+        title3.className = "title rap";
+        title3.innerHTML = 'Denzel Curry - Speedboat'
+        var div3 = document.createElement("div");
+        div3.className = "vid";
+        div3.innerHTML = '<iframe src="https://drive.google.com/file/d/1YauaupGWhNIGNyE7lTveJIyIk2tF8Jzd/preview" width="560" height="315" allowfullscreen></iframe>';
+          document.body.appendChild(title1);
+          document.body.appendChild(div1);
+          document.body.appendChild(title2);
+          document.body.appendChild(div2);
+          document.body.appendChild(title3);
+          document.body.appendChild(div3);
+          check = check + 100;
+          count++;
+      }
+      else if(getScroll()[1] * vh > check && count < 15){
+        let vh = 50 / document.documentElement.clientHeigh;
+        var title1 = document.createElement("div");
+        title1.className = "title etc";
+        title1.innerHTML = 'SALEM - Red River'
+        var div1 = document.createElement("div");
+        div1.className = "vid";
+        div1.innerHTML = '<iframe src="https://drive.google.com/file/d/1gDZj1wA7Iw4D2Q0VgVu4H_hdz7GV_Xgi/preview" width="560" height="315" allowfullscreen></iframe>';
+        var title2 = document.createElement("div");
+        title2.className = "title rap";
+        title2.innerHTML =  'Zack Fox, Fabo - Stick!'
+        var div2 = document.createElement("div");
+        div2.className = "vid";
+        div2.innerHTML = '<iframe src="https://drive.google.com/file/d/1xCT4xhPN1BHWXNgB5TiCdyBbXamzUVfK/preview" width="560" height="315" allowfullscreen></iframe>'
+        var title3 = document.createElement("div");
+        title3.className = "title rock";
+        title3.innerHTML = 'Body Count, Riley Gale [RIP] - Point The Finger'
+        var div3 = document.createElement("div");
+        div3.className = "vid";
+        div3.innerHTML = '<iframe src="https://drive.google.com/file/d/1zgSYlQZxoZb7O_6NyRbcxzfoSQ3ipDzw/preview" width="560" height="315" allowfullscreen></iframe>';
+          document.body.appendChild(title1);
+          document.body.appendChild(div1);
+          document.body.appendChild(title2);
+          document.body.appendChild(div2);
+          document.body.appendChild(title3);
+          document.body.appendChild(div3);
+          check = check + 100;
+          count++;
+      }
+      else if(getScroll()[1] * vh > check && count < 16){
+        let vh = 50 / document.documentElement.clientHeigh;
+        var title1 = document.createElement("div");
+        title1.className = "title rap";
+        title1.innerHTML = 'Curren$y - Offloading'
+        var div1 = document.createElement("div");
+        div1.className = "vid";
+        div1.innerHTML = '<iframe src="https://drive.google.com/file/d/1LkG1eLTpeJ7lU_N25Q_XCWX3Y80vFwN0/preview" width="560" height="315" allowfullscreen></iframe>';
+        var title2 = document.createElement("div");
+        title2.className = "title etc";
+        title2.innerHTML =  'Flying Lotus, Anderson .Paak - More'
+        var div2 = document.createElement("div");
+        div2.className = "vid";
+        div2.innerHTML = '<iframe src="https://drive.google.com/file/d/1a9R0Q4nUL30fFwity8a8VTN3B7wDNL7y/preview" width="560" height="315" allowfullscreen></iframe>'
+        var title3 = document.createElement("div");
+        title3.className = "title rap";
+        title3.innerHTML = 'Deniro Farrar - Wu-Tang'
+        var div3 = document.createElement("div");
+        div3.className = "vid";
+        div3.innerHTML = '<iframe src="https://drive.google.com/file/d/1R9EXwSPl_EMGSVxNm7jvWwaqdalN6loU/preview" width="560" height="315" allowfullscreen></iframe>';
+          document.body.appendChild(title1);
+          document.body.appendChild(div1);
+          document.body.appendChild(title2);
+          document.body.appendChild(div2);
+          document.body.appendChild(title3);
+          document.body.appendChild(div3);
+          check = check + 100;
+          count++;
+      }
+      else if(getScroll()[1] * vh > check && count < 17){
+        let vh = 50 / document.documentElement.clientHeigh;
+        var title1 = document.createElement("div");
+        title1.className = "title etc";
+        title1.innerHTML = 'Chemical Brothers - We&#39ve Got To Try'
+        var div1 = document.createElement("div");
+        div1.className = "vid";
+        div1.innerHTML = '<iframe src="https://drive.google.com/file/d/1_sl0dz4aQBVWjeheDaSpOc6Gb57lcZ5g/preview" width="560" height="315" allowfullscreen></iframe>';
+        var title2 = document.createElement("div");
+        title2.className = "title rap";
+        title2.innerHTML =  'IDK - King Alfred'
+        var div2 = document.createElement("div");
+        div2.className = "vid";
+        div2.innerHTML = '<iframe src="https://drive.google.com/file/d/1u5takAX6SY0oNyFbWJmoIXZ1TIJqCVo7/preview" width="560" height="315" allowfullscreen></iframe>'
+        var title3 = document.createElement("div");
+        title3.className = "title rock";
+        title3.innerHTML = 'The Garden - Clench To Stay Awake'
+        var div3 = document.createElement("div");
+        div3.className = "vid";
+        div3.innerHTML = '<iframe src="https://drive.google.com/file/d/1hHw2U6OnsQ6y9dF8hDbVaOQwsS_0XA3x/preview" width="560" height="315" allowfullscreen></iframe>';
+          document.body.appendChild(title1);
+          document.body.appendChild(div1);
+          document.body.appendChild(title2);
+          document.body.appendChild(div2);
+          document.body.appendChild(title3);
+          document.body.appendChild(div3);
+          check = check + 100;
+          count++;
+      }
+      else if(getScroll()[1] * vh > check && count < 18){
+        let vh = 50 / document.documentElement.clientHeigh;
+        var title1 = document.createElement("div");
+        title1.className = "title rap";
+        title1.innerHTML = 'A$AP Ferg - Jet Lag'
+        var div1 = document.createElement("div");
+        div1.className = "vid";
+        div1.innerHTML = '<iframe src="https://drive.google.com/file/d/1tus4im8PR7SW4fsOJ-wy0ipbkrSfUikw/preview" width="560" height="315" allowfullscreen></iframe>';
+        var title2 = document.createElement("div");
+        title2.className = "title etc";
+        title2.innerHTML =  'Oneohtrix Point Never - Lost But Never Alone'
+        var div2 = document.createElement("div");
+        div2.className = "vid";
+        div2.innerHTML = '<iframe src="https://drive.google.com/file/d/1_Mjojo1rJORJF77CN0a2WZapsva_trLa/preview" width="560" height="315" allowfullscreen></iframe>'
+        var title3 = document.createElement("div");
+        title3.className = "title rap";
+        title3.innerHTML =  'OMB Bloodbath, Maxo Kream - Dropout'
+        var div3 = document.createElement("div");
+        div3.className = "vid";
+        div3.innerHTML = '<iframe src="https://drive.google.com/file/d/1HXrYYoKfsRO3NC8QDUdDZbNcW4pb7-ZM/preview" width="560" height="315" allowfullscreen></iframe>'
+          document.body.appendChild(title1);
+          document.body.appendChild(div1);
+          document.body.appendChild(title2);
+          document.body.appendChild(div2);
+          document.body.appendChild(title3);
+          document.body.appendChild(div3);
+          check = check + 100;
+          count++;
+      }
+      else if(getScroll()[1] * vh > check && count < 19){
+        let vh = 50 / document.documentElement.clientHeigh;
+        var title1 = document.createElement("div");
+			title1.className = "title etc";
+			title1.innerHTML = 'Lorn - Timesink'
+        var div1 = document.createElement("div");
+			div1.className = "vid";
+			div1.innerHTML = '<iframe src="https://drive.google.com/file/d/1oWwQ5SFeoUk1fK1sHe-EYZYNw268OLUQ/preview" width="560" height="315" allowfullscreen></iframe>';
+		var title2 = document.createElement("div");
+			title2.className = "title rap";
+			title2.innerHTML = 'clipping. - Enlacing / Pain Everyday'
+        var div2 = document.createElement("div");
+			div2.className = "vid";
+			div2.innerHTML = '<iframe src="https://drive.google.com/file/d/1MR-VQ-ItZ_vOjBVEhApIHVL1JDV6YVSY/preview" width="560" height="315" allowfullscreen></iframe>';
+        var title3 = document.createElement("div");
+			title3.className = "title etc";
+			title3.innerHTML = 'Moses Boyd - Stranger Than Fiction'
+        var div3 = document.createElement("div");
+			div3.className = "vid";
+			div3.innerHTML = '<iframe src="https://drive.google.com/file/d/1mfH1uGeqNQEftaYmf7YhvTcKUyEtFW6A/preview" width="560" height="315" allowfullscreen></iframe>';
+          document.body.appendChild(title1);
+          document.body.appendChild(div1);
+          document.body.appendChild(title2);
+          document.body.appendChild(div2);
+          document.body.appendChild(title3);
+          document.body.appendChild(div3);
+          check = check + 100;
+          count++;
+      }
+      else if(getScroll()[1] * vh > check && count < 20){
+        let vh = 50 / document.documentElement.clientHeigh;
+        var title1 = document.createElement("div");
+        title1.className = "title etc";
+        title1.innerHTML = 'JOYRYDE, Majilla - Thrill'
+        var div1 = document.createElement("div");
+        div1.className = "vid";
+        div1.innerHTML = '<iframe src="https://drive.google.com/file/d/1u6-w85Op3ygiZcTT6j9zmMnWr2yA9Ntq/preview" width="560" height="315" allowfullscreen></iframe>';
+          document.body.appendChild(title1);
+          document.body.appendChild(div1);
+          check = check + 100;
+          count++;
+      }
+          else if(getScroll()[1] * vh > check && count < 23){
+      var endDrop = document.createElement("p");
+      endDrop.className = "drop";
+        document.body.appendChild(endDrop);
+        check = check + 100;
+        count++;
+      }
+    }
+
+    window.addEventListener('scroll', scrollAppear);
+
+
+
+
+</script>
+  </body>
+  </html>
