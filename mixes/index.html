@@ -5,8 +5,9 @@
   <link href="https://fonts.googleapis.com/css2?family=Modak" rel="stylesheet">
   <link href="https://fonts.googleapis.com/css2?family=Gelasio" rel="stylesheet">
   <link href="https://fonts.googleapis.com/css2?family=Alatsi" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@700&display=swap" rel="stylesheet">
 
-  <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="viewport" content="initial-scale=1">
 
 </head>
 <body>
@@ -19,17 +20,18 @@ body {
 .timeframe, .info, .tracklist {
   margin-left: 20px;
 }
-.download, .spotify {
+.download, .spotify, .info {
   margin-left: 10px;
 }
 a {
   text-decoration: none;
 }
 .title {
-  margin-left: 200px;
+  margin-left: 20px;
   color:pink;
   font-size: 50px;
   font-family: Modak;
+  margin-bottom: 10px;
 }
 .timeframe{
   font-size:36px;
@@ -44,8 +46,8 @@ a {
   color:white;
   text-transform: uppercase;
   font-family: Arial;
-  font-size:8px;
-  letter-spacing:0.5px;
+  font-size:7.3px;
+  letter-spacing:1.5px;
 }
 .info {
   background-color: blue;
@@ -53,26 +55,27 @@ a {
 .tracklist, .artist {
   font-family: Alatsi;
   font-size: 9px;
-  letter-spacing: 0.5px;
+  letter-spacing: 0.2px;
   color:white;
 }
 .featuring {
   padding-left:1px;
-  font-size:8px;
+  font-size:8.4px;
   color: yellow;
-  letter-spacing: .9px;
+  letter-spacing: .4px;
 }
 .producer {
   font-size: 5px;
      color:#03F9FF;
-    letter-spacing: 0.2px;
+    letter-spacing: 0.3px;
     padding-left:1px;
 }
 .song {
   padding-left:2px;
   font-family:Gelasio;
   color:#decf93;
-  font-size:7px;
+  font-size:10px;
+  letter-spacing: 0.4px;
   text-transform: uppercase;
 }
 .ttitle {
@@ -81,7 +84,9 @@ a {
   font-size:15px;
   color:black;
   background-color: white;
-  padding-right:200px;
+  padding-right:211px;
+  border-radius: 3px;
+
 }
 .download {
   background-color:red;
@@ -89,14 +94,32 @@ a {
 .spotify {
   background-color:green;
 }
+.marquee {
+  margin-bottom: 12px;
+  padding-right:30px;
+  padding-left:30px;
+  border-radius: 10px;
+  text-align: center;
+  color:black;
+  font-size:34px;
+  font-family:Space Grotesk;
+  text-transform: uppercase;
+  z-index:7;
+  background-color:white;
+}
+.mix {
+  width: 480px;
+  z-index:2;
+}
 </style>
-
-<br><span class="title">2021 MIXES</span><p><br>
-<span class="timeframe">APRIL 2021 RAP MIX #1</span><br>
+<div class="marquee"><p>APRIL11TH1978.COM</p></div>
+<br><div class="title">2021 MIXES</div>
+<div class="timeframe">APRIL 2021 RAP MIX #1</div>
 <span class="info">21 songs : 62 minutes</span>
 <a class="download" href="https://drive.google.com/file/d/1XDEQo6ToxyNwrSB0xq5i3Kp0G3PJrb9A/view">download continous mix</a>
 <a class="spotify" href="https://open.spotify.com/playlist/0cfDdgDtqlcljxaCkcAsif?si=kQvHu_mtS3y2v5GMEUmWkA"> Spotify Playlist</a><br>
-<span class="ttitle">TRACKLIST</span><br>
+<br><span class="ttitle">TRACKLIST</span><br>
+<div class="mix">
 <span class="artist">Tony Moxberg<span class="song">Love</span><span class="featuring">featuring Jadakiss, Benny The Butcher, Sheek Louch</span><span class="producer">produced by Jimmy Dukes</span><br>
 Dell-P<span class="song">Follow The Signs</span><span class="producer">produced by The Wurxs</span><br>
 SpotemGottem<span class="song">Beat Box 3</span><span class="featuring">featuring DaBaby</span><span class="producer">produced by Damn E</span><br>
@@ -118,12 +141,13 @@ Sosamann<span class="song">Big Dawg</span><br>
 2 Chainz<span class="song">Grey Area</span><span class="producer">produced by Jay The Great</span><br>
 Brockhampton<span class="song">Buzzcut</span><span class="featuring">featuring Danny Brown</span><span class="producer">produced by Johan Lenox, Jabari Manwa, Video Store, Queen Sixties</span><br>
 Juice Wrld<span class="song">Bad Boy</span><span class="featuring">featuring Young Thug</span><span class="producer">produced by Pi'erre Bourne</span><br>
-</span>
+</span></div>
 <br><br>
 <span class="timeframe">APRIL 2021 RAP MIX #2</span><br>
 <span class="info">22 songs : 65 minutes</span>
 <a class="spotify" href="https://open.spotify.com/playlist/6UhfF2RKEy2iwSoEnlxfuq">Spotify Playlist</a><br>
-<span class="ttitle">TRACKLIST</span><br>
+<br><span class="ttitle">TRACKLIST</span><br>
+  <div class="mix">
   <span class="artist">Statik Selektah<span class="song">Play Around</span><span class="featuring">featuring Conway The Machine, Killer Mike, 2 Chainz, Allan Kingdom</span><span class="producer">produced by Statik Selektah</span><br>
   Money Mu<span class="song">Hittin' Remix</span><span class="featuring">featuring Moneybagg Yo, Foogiano</span><span class="producer">produced by Mondo</span><br>
   Moneybagg Yo<span class="song">Time Today</span><span class="producer">produced by Real Red and YC</span><br>
@@ -146,7 +170,7 @@ Juice Wrld<span class="song">Bad Boy</span><span class="featuring">featuring You
   26ar<span class="song">Top 1</span><span class="producer">produced by Elias Reitzfeld</span><br>
   22Gz<span class="song">Twirlanta</span><span class="producer">produced by Muddi Gold and Teddy Da Don</span><br>
   KEY!<span class="song">Clinical</span><span class="producer">produced by Tony Seltzer and Laron</span><br>
-</span>
+</span></div>
 <br><br><br><br>
 </body>
 </html>
